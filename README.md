@@ -20,9 +20,9 @@ public interface UnfairQueue<T> {
 }
 ```
 
-### Implementing the interace
+### Implementing the interface
 
-You will be implementing this interface in two ways: (1) with a doubly-linked list (`UnfairQueueLL.java`); and (2) with a fixed-size circular array (`UnfairQueueArray.java`). I have provided some starter code, and you can use the code in the `example_code` repository as a guide.
+You will be implementing this interface in two ways: (1) with a doubly-linked list (`UnfairQueueLL.java`); and (2) with a fixed-size circular array (`UnfairQueueArray.java`). I have provided a tiny bit of starter code, but you can repurpose a lot of the code in the various `example_code/week6` repositories.
 
 ### What is "the middle" element?
 
@@ -30,7 +30,7 @@ When you have an odd number of elements, the middle element is unambiguous. For 
 
 If you have an even number of elements, you can decide whether to "round up" or "round down" to identify the mdidle element. If the elements are `A B C D E F`, either `C` or `D` could be the middle element. To make this ADT more like real life,  you will decide using a random number which of the two middle elements will be the one that gets removed. (Please review the code for Problem Set 3 to remind yourself how to generate and use a random number!)
 
-### How do I find the middle element using math?
+### How do I find the middle element using arithmetic?
 
 If you divide an `int` by another `int` in Java, you do something called "integer division". This is equivalent to taking off everything that appears after the decimal point. (This is also called finding the "floor".) Integer division in Java does not round to the nearest integer! 
 
@@ -40,10 +40,10 @@ Therefore, if you want to find the middle element, you can't always just divide 
 You will need to traverse to the middle from one end of the unfair queue to remove the middle node. You might even want to have two pointers for traversing, though it's not strictly necessary. You should try to traverse as few nodes as possible, so which end you traverse from can change depending on which node you decide is the middle node.
 
 ### Removing the middle element: circular array
-Removing from the middle will require some very fancy stuff in the array implementation! This will probably be the hardest part for many of you. You will have to figure out a clever way to find the middle when your tail or front has wrapped around. In addition, you will need shift some elements over when you remove an element in the middle. This will involve some thinking, so draw lots of pictures before you get started on the `removeMiddle()` method.
+Removing from the middle will require some fancy stuff in the array implementation! You will have to figure out a clever way to find the middle when your tail or front has wrapped around. In addition, you will need to shift some elements over when you remove an element in the middle. You don't want to leave any null elements in the middle of the unfair queue. This will involve some careful thought, so draw lots of pictures before you get started on the `removeMiddle()` method.
 
 ### Don't forget the special cases
-If your queue is empty, remember that `removeMiddle()` and `peekMiddle()` should either throw an exception or return null. If your queue has one element, `removeMiddle` and `peekMiddle` should return that one element, of course. There are other special cases, so think about these carefully!
+If your queue is empty, remember that `removeMiddle()` and `peekMiddle()` should either throw an exception or return null. If your queue has one element, `removeMiddle` and `peekMiddle` should return that one element, of course. There might be some other special cases, so think about these carefully!
 
 ### Testing your code `main()`
 
