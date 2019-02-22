@@ -17,6 +17,7 @@ public interface UnfairQueue<T> {
   T peekMiddle();
   boolean isEmpty();
   int getSize();
+  String toString();
 }
 ```
 
@@ -40,7 +41,7 @@ Therefore, if you want to find the middle element, you can't always just divide 
 You will need to traverse to the middle from one end of the unfair queue to remove the middle node. You might even want to have two pointers for traversing, though it's not strictly necessary. You should try to traverse as few nodes as possible, so which end you traverse from can change depending on which node you decide is the middle node.
 
 ### Removing the middle element: circular array
-Removing from the middle will require some fancy stuff in the array implementation! You will have to figure out a clever way to find the middle when your tail or front has wrapped around. In addition, you will need to shift some elements over when you remove an element in the middle. You don't want to leave any null elements in the middle of the unfair queue. This will involve some careful thought, so draw lots of pictures before you get started on the `removeMiddle()` method.
+Removing from the middle will require some fancy stuff in the array implementation! You will have to figure out a clever way to find the middle when your left (front) or right (tail) has wrapped around. In addition, you will need to shift some elements over when you remove an element in the middle. You don't want to leave any null elements in the middle of the unfair queue. This will involve some careful thought, so draw lots of pictures before you get started on the `removeMiddle()` method.
 
 ### Don't forget the special cases
 If your queue is empty, remember that `removeMiddle()` and `peekMiddle()` should either throw an exception or return null. If your queue has one element, `removeMiddle` and `peekMiddle` should return that one element, of course. There might be some other special cases, so think about these carefully!
