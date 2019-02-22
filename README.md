@@ -34,7 +34,7 @@ If you have an even number of elements, you can decide whether to "round up" or 
 
 If you divide an `int` by another `int` in Java, you do something called "integer division". This is equivalent to taking off everything that appears after the decimal point. (This is also called finding the "floor".) Integer division in Java does not round to the nearest integer! 
 
-Therefore, if you want to find the middle element, you can't always just divide the int size by int 2. You can experiment with using the `Math.floor()` and `Math.ceil()` methods in conjunction with casting to `double`. You can also experiment with adding 1 or 2 to the size before doing the integer division. It's up to you to find the solution you like best.
+Therefore, if you want to find the middle element, you can't always just divide the `int size` by an `int 2`. To figure out how to get the middle you want, you can experiment with using the `Math.floor()` and `Math.ceil()` methods in conjunction with casting to `double`. You can also experiment with adding 1 or 2 to the size before doing the integer division. It's up to you to find the solution you like best. I suggest googling and trying out different ideas in Java and on paper.
 
 ### Don't forget the special cases
 If your queue is empty, remember that `removeMiddle()` and `peekMiddle()` should either throw an exception or return null. If your queue has one element, `removeMiddle` and `peekMiddle` should return that one element, of course.
@@ -53,8 +53,8 @@ Once your code works to your satisfaction, push `UnfairQueueArray.java` and `Unf
 
 ## Important notes on grading
 
-1. The files **must be in the `src` directory**. You will lose 2 points for each file that is in the wrong directory. The best way to make sure it is in the right place is to never ever move it in the first place.
+1. The files **must be in the `src` directory**. You will lose 2 points for each file that is in the wrong directory. The best way to make sure the files are in the right place is to never ever move them in the first place.
 
 2. Your code must compile. If a class does not compile, you will get a 0. If you are struggling and you aren't able to get in touch with me or the TAs, any TAs in the lab can help you compile your code. If it's 11:55pm on the day it's due and you don't want to take the late penalty, comment out the part of the code that is preventing compilation, and include an explanation of why you are commenting it out.
 
-3. The TAs will review and run your code. Note that in addition to running your `main()` method, they will try a few of their own. It's a good idea to do some error checking to avoid any surprises during grading.
+3. The TAs will review and run your code. Note that in addition to running your `main()` method, they will try out one of their own. It's a good idea to do some error checking to avoid any surprises during grading.
